@@ -1,0 +1,245 @@
+/* =========================================================
+   Sufi Sweets — Global Stylesheet
+   ========================================================= */
+:root {
+  --sufi-brown: #4a2c17;
+  --sufi-brown-light: #6b4226;
+  --sufi-gold: #c8963e;
+  --sufi-gold-dark: #a97a26;
+  --sufi-cream: #fdf8f0;
+  --sufi-cream-dark: #f3e7d6;
+  --sufi-text: #3a2a1c;
+}
+
+* { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--sufi-cream);
+  color: var(--sufi-text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex: 1 0 auto; }
+
+/* ---------- Navbar ---------- */
+.navbar-sufi { background: var(--sufi-brown); }
+.navbar-sufi .navbar-brand { font-weight: 700; color: #fff; letter-spacing: .3px; }
+.navbar-sufi .navbar-brand span { color: var(--sufi-gold); }
+.navbar-sufi .nav-link {
+  color: rgba(255, 255, 255, .85);
+  font-weight: 500;
+  border-radius: .45rem;
+  padding: .45rem .8rem;
+  transition: all .2s ease;
+}
+.navbar-sufi .nav-link:hover,
+.navbar-sufi .nav-link.active {
+  color: var(--sufi-gold);
+  background: rgba(255, 255, 255, .07);
+}
+.navbar-sufi .cart-count { font-size: .68rem; vertical-align: top; }
+
+/* ---------- Buttons ---------- */
+.btn-sufi {
+  background: var(--sufi-gold);
+  border: 1px solid var(--sufi-gold);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-sufi:hover, .btn-sufi:focus {
+  background: var(--sufi-gold-dark);
+  border-color: var(--sufi-gold-dark);
+  color: #fff;
+}
+.btn-outline-sufi {
+  color: var(--sufi-brown);
+  border: 1px solid var(--sufi-brown);
+  font-weight: 600;
+}
+.btn-outline-sufi:hover { background: var(--sufi-brown); color: #fff; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, #3a2113 0%, #5c3620 55%, #8a5a2b 100%);
+  color: #fff;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(200, 150, 62, .35), transparent 45%);
+  pointer-events: none;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero-emoji { font-size: 9rem; line-height: 1; filter: drop-shadow(0 14px 26px rgba(0,0,0,.45)); }
+
+/* ---------- Sections ---------- */
+.section { padding: 4rem 0; }
+.section-title {
+  font-weight: 700;
+  color: var(--sufi-brown);
+  position: relative;
+  display: inline-block;
+  padding-bottom: .6rem;
+  margin-bottom: 1rem;
+}
+.section-title::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 60px; height: 4px; border-radius: 2px;
+  background: var(--sufi-gold);
+}
+.text-center .section-title::after { left: 50%; transform: translateX(-50%); }
+
+/* ---------- Page header (inner pages) ---------- */
+.page-header {
+  background: linear-gradient(135deg, #3a2113, #7a4a26);
+  color: #fff;
+  padding: 3rem 0;
+}
+.page-header .breadcrumb a { color: var(--sufi-gold); text-decoration: none; }
+
+/* ---------- Cards ---------- */
+.card-sufi {
+  border: none;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(74, 44, 23, .08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  height: 100%;
+}
+.card-sufi:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(74, 44, 23, .16);
+}
+.product-thumb {
+  height: 190px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4.2rem;
+  background: linear-gradient(135deg, #fbeed8, #f3d9ac);
+  border-radius: 1rem 1rem 0 0;
+}
+.price { color: var(--sufi-gold-dark); font-weight: 700; font-size: 1.1rem; }
+
+/* ---------- Feature icons ---------- */
+.icon-circle {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  background: var(--sufi-cream-dark);
+  color: var(--sufi-brown);
+  margin-bottom: 1rem;
+}
+
+/* ---------- Cart ---------- */
+.cart-thumb {
+  width: 56px; height: 56px; flex: 0 0 auto;
+  border-radius: .75rem;
+  background: linear-gradient(135deg, #fbeed8, #f3d9ac);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+}
+
+/* ---------- Dashboard stat cards ---------- */
+.stat-card { border-radius: 1rem; padding: 1.25rem; color: #fff; height: 100%; }
+.stat-card .stat-value { font-size: 1.9rem; font-weight: 700; line-height: 1; }
+.stat-card .stat-icon { font-size: 2rem; opacity: .35; }
+.bg-sufi-1 { background: linear-gradient(135deg, #4a2c17, #7a4a26); }
+.bg-sufi-2 { background: linear-gradient(135deg, #c8963e, #e0b45f); }
+.bg-sufi-3 { background: linear-gradient(135deg, #2f6b4f, #48916c); }
+.bg-sufi-4 { background: linear-gradient(135deg, #7b2d3b, #a9485a); }
+
+/* ---------- Auth pages ---------- */
+.auth-wrap { padding: 3rem 0; display: flex; align-items: center; }
+.auth-card { max-width: 500px; margin: 0 auto; width: 100%; }
+
+/* ---------- Footer ---------- */
+.footer-sufi { background: var(--sufi-brown); color: #e8d9c6; }
+.footer-sufi h5, .footer-sufi h6 { color: #fff; }
+.footer-sufi a { color: #e8d9c6; text-decoration: none; transition: color .2s; }
+.footer-sufi a:hover { color: var(--sufi-gold); }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 991.98px) {
+  .hero { text-align: center; padding: 3.5rem 0; }
+  .hero-emoji { font-size: 7rem; }
+}
+@media (max-width: 575.98px) {
+  .section { padding: 2.5rem 0; }
+  .hero { padding: 2.5rem 0; }
+  .hero-emoji { font-size: 5.5rem; }
+  .product-thumb { height: 150px; font-size: 3.2rem; }
+}
+/* =========================================================
+   Real images (replaces emoji thumbs)
+   ========================================================= */
+
+/* Logo in navbar + footer */
+.brand-logo {
+  height: 36px;
+  width: auto;
+  margin-right: .5rem;
+  border-radius: .4rem;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* Product thumbnail inside cards + cart + quick view */
+.product-img {
+  width: 100%;
+  height: 205px;          /* same as old .product-thumb */
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Small image inside the cart rows */
+.cart-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: .75rem;
+}
+
+/* Image in quick-view modal (square-ish) */
+.qv-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* Hero image on homepage */
+.hero-img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+}
+
+/* Responsive shrink on small screens */
+@media (max-width: 575.98px) {
+  .product-img { height: 150px; }
+  .hero-img    { max-width: 300px; }
+  .brand-logo  { height: 30px; }
+}
+.hero-iamge {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-iamge img {
+    width: 110%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+}

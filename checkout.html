@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | Sufi Sweets</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-sufi sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">🍬 Sufi <span>Sweets</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="cart.html">
+            Cart <span class="badge rounded-pill bg-warning text-dark cart-count">0</span>
+          </a>
+        </li>
+        <li class="nav-item ms-lg-2"><a class="btn btn-sufi btn-sm px-3" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="btn btn-outline-light btn-sm px-3" href="register.html">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="cart.html">Cart</a></li>
+          <li class="breadcrumb-item active text-white-50" aria-current="page">Checkout</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-1">Checkout</h1>
+      <p class="mb-0 opacity-75">Complete your delivery and payment details.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <form class="row g-4 needs-validation" novalidate>
+
+        <!-- ================= DELIVERY DETAILS ================= -->
+        <div class="col-lg-8">
+          <div class="card card-sufi mb-4">
+            <div class="card-body p-4">
+              <h5 class="mb-3">Delivery Details</h5>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="coName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="coName" required>
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="coPhone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="coPhone" pattern="[0-9+\- ]{10,15}" required>
+                  <div class="invalid-feedback">Enter a valid phone number (10–15 digits).</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="coEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="coEmail" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="coCity" class="form-label">City <span class="text-danger">*</span></label>
+                  <select class="form-select" id="coCity" required>
+                    <option value="" selected disabled>Choose city…</option>
+                    <option>Lahore</option>
+                    <option>Karachi</option>
+                    <option>Islamabad</option>
+                    <option>Rawalpindi</option>
+                    <option>Faisalabad</option>
+                    <option>Multan</option>
+                  </select>
+                  <div class="invalid-feedback">Please select your city.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="coAddress" class="form-label">Delivery Address <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="coAddress" rows="2" required></textarea>
+                  <div class="invalid-feedback">Please enter your delivery address.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="coDate" class="form-label">Preferred Delivery Date</label>
+                  <input type="date" class="form-control" id="coDate">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="coTime" class="form-label">Preferred Time Slot</label>
+                  <select class="form-select" id="coTime">
+                    <option selected>Morning (9 AM – 12 PM)</option>
+                    <option>Afternoon (12 PM – 5 PM)</option>
+                    <option>Evening (5 PM – 10 PM)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PAYMENT METHOD ================= -->
+          <div class="card card-sufi mb-4">
+            <div class="card-body p-4">
+              <h5 class="mb-3">Payment Method</h5>
+
+              <div class="form-check mb-3 p-3 border rounded">
+                <input class="form-check-input" type="radio" name="payment" id="payCod" checked>
+                <label class="form-check-label w-100" for="payCod">
+                  <strong>Cash on Delivery</strong><br>
+                  <small class="text-muted">Pay in cash when your order arrives.</small>
+                </label>
+              </div>
+
+              <div class="form-check mb-3 p-3 border rounded">
+                <input class="form-check-input" type="radio" name="payment" id="payCard">
+                <label class="form-check-label w-100" for="payCard">
+                  <strong>Debit / Credit Card</strong><br>
+                  <small class="text-muted">Visa, Mastercard, UnionPay.</small>
+                </label>
+              </div>
+
+              <div class="form-check p-3 border rounded">
+                <input class="form-check-input" type="radio" name="payment" id="payWallet">
+                <label class="form-check-label w-100" for="payWallet">
+                  <strong>Mobile Wallet</strong><br>
+                  <small class="text-muted">Easypaisa, JazzCash.</small>
+                </label>
+              </div>
+
+              <div class="mt-3">
+                <label for="coNotes" class="form-label">Order Notes (optional)</label>
+                <textarea class="form-control" id="coNotes" rows="2"
+                          placeholder="Any special instructions for your order…"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= ORDER SUMMARY ================= -->
+        <div class="col-lg-4">
+          <div class="card card-sufi">
+            <div class="card-body p-4">
+              <h5 class="mb-3">Order Summary</h5>
+
+              <div id="checkoutItems" class="mb-3"><!-- filled by main.js --></div>
+
+              <hr>
+              <ul class="list-unstyled d-grid gap-2 mb-3">
+                <li class="d-flex justify-content-between">
+                  <span class="text-muted">Subtotal</span>
+                  <span data-sum="subtotal">Rs. 0</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <span class="text-muted">Delivery</span>
+                  <span data-sum="delivery">Rs. 0</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <span class="text-muted">Discount</span>
+                  <span class="text-success" data-sum="discount">Rs. 0</span>
+                </li>
+              </ul>
+              <hr>
+              <div class="d-flex justify-content-between mb-3">
+                <strong>Total</strong>
+                <strong class="price" data-sum="total">Rs. 0</strong>
+              </div>
+
+              <div class="alert alert-success py-2 d-none form-success">
+                ✔ Order placed successfully! (UI demo — no backend)
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-sufi btn-lg">Place Order</button>
+                <a href="cart.html" class="btn btn-outline-sufi">Back to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-sufi pt-5 pb-3 mt-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h5 class="mb-3">🍬 Sufi Sweets</h5>
+        <p class="small">Traditional sweets and dairy products made with pure desi ghee since 1994.</p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6 class="mb-3">Quick Links</h6>
+        <ul class="list-unstyled small d-grid gap-2">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="mb-3">My Account</h6>
+        <ul class="list-unstyled small d-grid gap-2">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="cart.html">Shopping Cart</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="mb-3">Contact Us</h6>
+        <ul class="list-unstyled small d-grid gap-2">
+          <li>📍 12-B, Food Street,Gulberg Lahore</li>
+          <li>📞 +92 3045575224</li>
+          <li>✉️ info@sufisweets.com</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-light opacity-25 mt-4">
+    <p class="text-center small mb-0">© 2026 Sufi Sweets. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
